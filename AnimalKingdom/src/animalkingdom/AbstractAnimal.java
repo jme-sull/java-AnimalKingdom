@@ -4,11 +4,11 @@ abstract class AbstractAnimal
 {
 	//fields
 
-	protected static int maxId = 0
+	protected static int maxId = 0;
 
 	protected int id; 
 	protected String name;
-	protected String yearNamed; 
+	protected int yearNamed; 
 
 	//constructor
 
@@ -22,7 +22,17 @@ abstract class AbstractAnimal
 
 	}
 
-	//methods - how do I write the eat method? I need to review the lesson 
+	//methods 
+	abstract String getName();
+	abstract int getYearNamed();
+	abstract int getId();
+	
+	String eat() //child decideds if public or private, but must implemnt eat in this way, correct?
+	{
+		return "Omnomnom";
+	}
+
+
 
 
 }
