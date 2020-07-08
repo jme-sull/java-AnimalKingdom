@@ -42,6 +42,7 @@ public class Main
 
 		//Collection -> List -> ArrayList
 		List<AbstractAnimal> myList = new ArrayList<>();
+		List<AbstractAnimal> sortedList = new ArrayList<>();
 
 		myList.add(panda);
 		myList.add(zebra);
@@ -62,13 +63,9 @@ public class Main
 		//Processing
 
 
-		//***I am struggling with the syntax for this one***///
-
-		//System.out.print("\n *** List all the animals in descending order by year named ***");
-		//myList.sort((a2, a1) -> a1.getYearNamed().a2.getYearNamed());
-		//System.out.print(myList);
-
-		///
+		System.out.print("\n *** List all the animals in descending order by year named ***");
+		myList.sort((a2, a1) -> a1.getYearNamed() - a2.getYearNamed());
+		System.out.print(myList);
 
 		System.out.print("\n *** List all the animals in alphabetical order ***");
 		myList.sort((a1, a2) -> a1.getName().compareToIgnoreCase(a2.getName()));
@@ -89,7 +86,10 @@ public class Main
 		filterAnimal(myList, a -> (a.reproduce() == "eggs") && (a.breathe() == "lungs"));
 
 		System.out.print("\n *** List alphabetically only those animals that were named in 1758 ***");
-		filterAnimal(myList, a -> a.getYearNamed() == 1758); //need to add the sort 
+		
+		myList.sort((a1, a2) -> a1.getName().compareToIgnoreCase(a2.getName()));
+		filterAnimal(myList, a -> (a.getYearNamed() == 1758));
+
 
 
 
