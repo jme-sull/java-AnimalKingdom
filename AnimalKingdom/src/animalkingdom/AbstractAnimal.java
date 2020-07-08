@@ -23,14 +23,31 @@ abstract class AbstractAnimal
 	}
 
 	//methods 
-	abstract String getName();
-	abstract int getYearNamed();
-	abstract int getId();
-	
+	abstract String move();
+	abstract String breathe();
+	abstract String reproduce(); 
+
 	String eat() //child decideds if public or private, but must implemnt eat in this way, correct?
 	{
 		return "Omnomnom";
 	}
+
+	String getName()
+	{
+		return name;
+	}
+
+	int getYearNamed()
+	{
+		return yearNamed;
+	}
+
+	int getId()
+	{
+		return id;
+	}
+
+
 
 
 
