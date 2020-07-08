@@ -5,6 +5,17 @@ import java.util.ArrayList;
 
 public class Main
 {
+	public static void filterAnimal(List<AbstractAnimal> animals, CheckAnimal tester)
+	{
+		for (AbstractAnimal a : animals)
+		{
+			if (tester.test(a))
+			{
+				System.out.println(a.getName() + " " + a.reproduce() + " " + a.move() + " " + a.breathe());
+			} 
+
+		}
+	}
 	public static void main(String[] args)
 	{
 
@@ -48,6 +59,45 @@ public class Main
 		myList.add(catfish);
 		myList.add(perch);
 
+		//Processing
+
+
+		//***I am struggling with the syntax for this one***///
+
+		//System.out.print("\n *** List all the animals in descending order by year named ***");
+		//myList.sort((a2, a1) -> a1.getYearNamed().a2.getYearNamed());
+		//System.out.print(myList);
+
+		///
+
+		System.out.print("\n *** List all the animals in alphabetical order ***");
+		myList.sort((a1, a2) -> a1.getName().compareToIgnoreCase(a2.getName()));
 		System.out.print(myList);
+
+		System.out.print("\n *** List all the animals in order by how they move ***");
+		myList.sort((a1, a2) -> a1.move().compareToIgnoreCase(a2.move()));
+		System.out.print(myList);
+
+		System.out.print("\n *** List only those animals that breath with lungs ***");
+		filterAnimal(myList, a -> a.breathe() == "lungs");
+
+
+		System.out.print("\n *** List only those animals that breath with lungs and were named in 1758 ***");
+		filterAnimal(myList, a -> (a.breathe() == "lungs") && (a.getYearNamed() == 1758));
+
+		System.out.print("\n *** List only those animals that lay eggs and breath with lungs ***");
+		filterAnimal(myList, a -> (a.reproduce() == "eggs") && (a.breathe() == "lungs"));
+
+		System.out.print("\n *** List alphabetically only those animals that were named in 1758 ***");
+		filterAnimal(myList, a -> a.getYearNamed() == 1758); //need to add the sort 
+
+
+
+
+
+
+
+
+
 	}
 }

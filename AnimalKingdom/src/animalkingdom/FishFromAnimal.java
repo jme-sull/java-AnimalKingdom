@@ -28,7 +28,5 @@ public class FishFromAnimal extends AbstractAnimal
 		return "eggs";
 	}
 
-	
-
 
 }
