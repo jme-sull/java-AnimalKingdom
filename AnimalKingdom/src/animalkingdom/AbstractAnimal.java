@@ -47,6 +47,12 @@ abstract class AbstractAnimal
 		return id;
 	}
 
+	@Override
+	public String toString()
+	{ 
+		return "\n Animals {id=" + id + " name=" + name + " yearNamed=" + yearNamed + "}";
+	}
+
 
 
 
